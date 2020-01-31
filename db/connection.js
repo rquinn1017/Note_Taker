@@ -10,18 +10,16 @@ require("dotenv").config();
 // };
 var connection;
 // Sets up db to connect locally or on JAWSDB if deployed
-// if (process.env.JAWSDB_URL) {
-//   connection = mysql.createConnection(process.env.CLEARDB_DATABASE_URL);
-// } else {
-  connection = mysql.createConnection({
-    host: "k2fqe1if4c7uowsh.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-    user: "ev7t3gq1amnk7fqy",
-    password: 'wclql9wgj07c5zwd',
-    database: "heroku_f53a33e5c1c71bb",
-    port: 3306,
-    database: f5d0bzhcmty4y1ye
+if (process.env.JAWSDB_URL) {
+  connection = mysql.createConnection(process.env.CLEARDB_DATABASE_URL);
+} else {
+   connection = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: process.env.MYSQL_PW,
+    database: "notetaker_db"
   });
-// }
+}
 
 
 // Turns BOOLEAN 0s and 1s returned from the db into true and false
