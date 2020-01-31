@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 3000;
 // setting up express app to handle data parsing
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
-// app.use(express.static("public"));
+app.use(express.static("public"));
 
 // sets up api routes files
 app.use(routes);
