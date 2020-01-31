@@ -10,9 +10,9 @@ require("dotenv").config();
 // };
 var connection;
 // Sets up db to connect locally or on JAWSDB if deployed
-if (process.env.JAWSDB_URL) {
-  connection = mysql.createConnection(process.env.CLEARDB_DATABASE_URL);
-} else {
+// if (process.env.JAWSDB_URL) {
+//   connection = mysql.createConnection(process.env.CLEARDB_DATABASE_URL);
+// } else {
   connection = mysql.createConnection({
     host: "k2fqe1if4c7uowsh.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     user: "ev7t3gq1amnk7fqy",
@@ -21,7 +21,8 @@ if (process.env.JAWSDB_URL) {
     port: 3306,
     database: f5d0bzhcmty4y1ye
   });
-}
+// }
+
 
 // Turns BOOLEAN 0s and 1s returned from the db into true and false
 connection.config.typeCast = function(field, next) {
